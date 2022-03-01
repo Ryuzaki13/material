@@ -1,0 +1,48 @@
+﻿<Window x:Class="MaterialList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialList"
+        mc:Ignorable="d"
+        Title="Материалы" Height="660" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <!--Корневой элемент списка материалов-->
+        <StackPanel Grid.Row="1" Name="MaterialList">
+
+            <!--Контейнер для одного элемента списка-->
+            <Border BorderBrush="Black" BorderThickness="1" Margin="20,10">
+                <StackPanel Orientation="Horizontal">
+
+                    <!--Изображение материала-->
+                    <Image Width="150" Margin="10" Source="materials/picture.png" HorizontalAlignment="Left"></Image>
+
+                    <!--Стек для текстовых полей-->
+                    <StackPanel Width="400" Margin="10">
+                        <TextBlock TextWrapping="Wrap" FontSize="20" Text="Тип материала | Наименование материала"></TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16" Text="Минимальное количество: 3 шт"></TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontSize="16" Text="Поставщики: Рога и копыта....."></TextBlock>
+                    </StackPanel>
+
+                    <!--Поле для вывода остатка-->
+                    <Label Width="140" Margin="10" FontSize="18" Content="Остаток: 0 шт" HorizontalContentAlignment="Right"/>
+
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+
+        <StackPanel Margin="0,0,20,0" Name="Pagination" Grid.Row="2" FlowDirection="RightToLeft" Orientation="Horizontal">
+
+
+
+        </StackPanel>
+        <ComboBox HorizontalAlignment="Left" Margin="287,42,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}"/>
+    </Grid>
+</Window>
